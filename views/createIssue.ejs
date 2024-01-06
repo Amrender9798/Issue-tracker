@@ -1,0 +1,103 @@
+<!-- Bootstrap CSS -->
+<style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background-color: #f8f9fa; /* Light gray background */
+    }
+  
+    .container {
+      margin-top: 40px; /* Increased top margin */
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  
+    .form-container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  
+    .form-group {
+      margin-bottom: 20px;
+    }
+  
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  
+    .checkbox-item {
+      margin-right: 20px;
+    }
+  
+    .btn-submit {
+      background-color: #28a745; /* Bootstrap success color */
+      color: #fff; /* White text color */
+      font-weight: bold;
+    }
+  </style>
+  
+  <div class="container mt-4">
+    <div class="form-container">
+      <h2>Create New Issue</h2>
+      <form action="/project-details/<%=projectId%>/issues" method="POST">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            name="title"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea
+            class="form-control"
+            id="description"
+            name="description"
+            rows="4"
+            required
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label>Labels</label>
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input type="checkbox" id="bug" name="labels" value="bug" />
+              <label for="bug">Bug</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="feature" name="labels" value="feature" />
+              <label for="feature">Feature</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="enhancement" name="labels" value="enhancement" />
+              <label for="enhancement">Enhancement</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="documentation" name="labels" value="documentation" />
+              <label for="documentation">Documentation</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="other" name="labels" value="other" />
+              <label for="other">Other</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input
+            type="text"
+            class="form-control"
+            id="author"
+            name="author"
+            required
+          />
+        </div>
+        <button type="submit" class="btn btn-submit">Create Issue</button>
+      </form>
+    </div>
+  </div>
+  

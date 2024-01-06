@@ -1,0 +1,63 @@
+<style>
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f8f9fa; /* Light gray background */
+  }
+
+  .container {
+    margin-top: 40px; /* Increased top margin */
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .form-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .btn-submit {
+    background-color: #28a745; /* Bootstrap success color */
+    color: #fff; /* White text color */
+    font-weight: bold;
+  }
+</style>
+
+<div class="container mt-4">
+  <div class="form-container">
+    <h2>Create New Project</h2>
+    <form action="/issues" method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          class="form-control"
+          id="description"
+          name="description"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" class="form-control" id="author" name="author" />
+      </div>
+      <button type="submit" class="btn btn-submit">Create Project</button>
+    </form>
+  </div>
+</div>
+
+<!-- Bootstrap JS and jQuery (needed for Bootstrap functionality) -->
